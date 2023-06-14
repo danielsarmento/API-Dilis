@@ -7,4 +7,4 @@ import { sendManual } from '../controllers/sendController.js';
 
 // Defina suas rotas
 routes.get('/', home);
-routes.get('/send', sendManual);
+routes.post('/sendManual', sendManual);

@@ -1,6 +1,19 @@
 import axios from 'axios'
 
 export class RegisterService {
+
+    async executeSendManual (data){
+        try {
+            for (const item of data){
+                await this.send(item.name, item.videoLink, item.cellphone)
+            }
+            return 
+
+          } catch (err) {
+            console.log(err)
+            throw new Error()
+          }
+    }
     
     async send (name, videoLink, phone) {
         const link = videoLink.replace(" ", "")
@@ -24,6 +37,7 @@ export class RegisterService {
                 },
             });
         } catch (err) {
+            console.log(err)
             throw new Error()
         }
     }
