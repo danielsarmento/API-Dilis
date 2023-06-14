@@ -1,12 +1,12 @@
-import { RegisterService } from "../../services/registerServices.js";
+import { SendManualService } from "../../services/sendManualService.js";
 
 export async function sendManual (req, res) {
     const { data } = req.body
     console.log(data)
     try{
-        const registerService = new RegisterService()
+        const sendManualService = new SendManualService()
 
-        await registerService.executeSendManual(data)
+        await sendManualService.executeSendManual(data)
         
         return res.status(200).json({message: "Messages sent successfully!"})
         

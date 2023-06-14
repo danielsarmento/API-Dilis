@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export class RegisterService {
+export class SendManualService {
 
     async executeSendManual (data){
         try {

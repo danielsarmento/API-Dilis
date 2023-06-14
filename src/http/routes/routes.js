@@ -3,7 +3,7 @@ export const routes = express.Router()
 
 // Importe os controladores
 import {home} from '../controllers/homeController.js'
-import { sendManual } from '../controllers/sendController.js';
+import { sendManual } from '../controllers/sendManualController.js';
 
 // Defina suas rotas
 routes.get('/', home);
