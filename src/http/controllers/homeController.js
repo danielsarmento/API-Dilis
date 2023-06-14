@@ -1,3 +1,3 @@
-exports.home = async (req, res) => {
+export async function home (req, res){
     res.send('Home Page');
 };
