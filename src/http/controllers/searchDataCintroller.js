@@ -11,7 +11,7 @@ export async function searchData (req, res) {
         
     } catch (err) {
         console.log(err.message)
-        if(err instanceof SearchCellphoneError){
+        if(err instanceof Error){
             return res.status(404).json({isRegister: false})
         }
         return res.status(500).json({isRegister: false})
