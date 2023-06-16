@@ -1,3 +1,3 @@
 export async function home (req, res){
-    res.send('Home Page');
+    res.send('API Dilis');
 };
