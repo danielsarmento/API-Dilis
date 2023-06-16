@@ -13,7 +13,7 @@ app.use(routes);
 cron.schedule('0-59 0-23 1-31 6 mon-tue-wed-thu-fri-sat-sun', () => {
   let hora = new Date
   console.log(`Executando Disparos... ${hora.getHours()}:${hora.getMinutes().toString().padStart(2, '0')} | ${hora.getDate().toString().padStart(2, '0')}/${(hora.getMonth() +1).toString().padStart(2, '0')}/${hora.getFullYear()}`)
-  axios.get(`http://localhost:3333/routine`)
+  axios.get(`http://145.14.134.34:3333/routine`)
 })
 
 app.listen(3333, () => {
