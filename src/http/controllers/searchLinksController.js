@@ -5,8 +5,7 @@ export async function searchLinks (req, res) {
     try {
         const searchLinks = new SearchLinksDB()
         const data = await searchLinks.searchLinksDB(telefone)
-
-        if(data.length < 1){
+        if(data.links.length < 1){
             res.status(200).json({isRegister: false, data:[]})
         } else {
             res.status(200).json({isRegister: true, data})

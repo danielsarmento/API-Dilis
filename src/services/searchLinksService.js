@@ -5,6 +5,7 @@ export class SearchLinksDB {
     async searchLinksDB (cellphone) {
         const telefone = cellphone.slice(2)
         const links = []
+        let nome;
         try {
             const response = await axios.get(`http://145.14.134.34:3021/api/external/users?status=all`)
             if (!response){
@@ -14,9 +15,10 @@ export class SearchLinksDB {
                 data.map((obj) => {
                     if(obj.cellphone === telefone){
                         links.push(obj.videoLink)
+                        nome = obj.name
                     }
                 })
-                return links
+                return {nome, links}
             }
             
         } catch (err) {
