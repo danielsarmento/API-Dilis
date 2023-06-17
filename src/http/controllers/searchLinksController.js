@@ -1,4 +1,4 @@
-import { SearchLinksDB } from "../../services/SearchLinksService.js";
+import { SearchLinksDB } from "../../services/searchLinksService.js";
 
 export async function searchLinks (req, res) {
     const {telefone} = req.params;
