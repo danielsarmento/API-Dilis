@@ -14,7 +14,7 @@ export class SendRoutineService {
                     await this.update(item.id)
                 }
                 //await this.send("Daniel", `Número de Disparos: ${apiData.length}`, "83999415087")
-                await this.send("Myvson", `Número de Disparos: ${apiData.length}`, "83981870421")
+                //await this.send("Myvson", `Número de Disparos: ${apiData.length}`, "83981870421")
                 return 
             }
 
