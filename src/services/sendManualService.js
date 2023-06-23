@@ -16,8 +16,9 @@ export class SendManualService {
     }
     
     async send (name, videoLink, phone) {
-        const link = videoLink.replace(" ", "")
-        try {await axios.post('https://api.zenvia.com/v2/channels/whatsapp/messages', {
+        //const link = videoLink.replace(" ", "")
+        try {
+            /* await axios.post('https://api.zenvia.com/v2/channels/whatsapp/messages', {
                 from: `558398679409`,
                 to: `55${phone}`,
                 contents: [
@@ -35,7 +36,27 @@ export class SendManualService {
                     'X-API-TOKEN': `onmngqVKP0U9KNbsiE3yY-Z86A7b6U4w5CXy`,
                     'Content-Type': 'application/json',
                 },
-            });
+            }); */
+            await axios.post('https://api.zenvia.com/v2/flow-batches', {
+            flowId: `b4656ce4-07ab-41c5-9329-3c0203b8664f`,
+            name: 'Fluxo Ativo - Dilis São João',
+            content: {
+                    fields: [
+                        [
+                        `${phone}`
+                        ]
+                    ],
+                    fieldNames: [
+                        "whatsapp"
+                    ]
+            }
+        }, {
+            headers: {
+                'X-API-TOKEN': `onmngqVKP0U9KNbsiE3yY-Z86A7b6U4w5CXy`,
+                'Content-Type': 'application/json',
+            },
+        });
+        console.log(`Disparado para: ${name}`)
         } catch (err) {
             console.log(err)
             throw new Error()
